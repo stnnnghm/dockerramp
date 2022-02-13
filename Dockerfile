@@ -9,6 +9,8 @@ ADD . /app
 # Specify that any future commands will be executed
 # inside /app dir
 WORKDIR /app
+# Add dependencies
+RUN go mod download
 # Run `go build` to compile the binary of the Go program
 RUN go build -o main .
 # Start command which kicks off newly created binary
